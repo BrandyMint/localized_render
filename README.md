@@ -1,7 +1,10 @@
 # LocalizedRender
 
+[![Build Status](https://travis-ci.org/BrandyMint/localized_render.svg?branch=master)](https://travis-ci.org/BrandyMint/localized_render)
+
+
 Позволяет удобно редаткировать globalized-атрибуты моделей во вьюхах с
-поддержкой bootstrap 3 css
+поддержкой CSS от bootstrap 3 
 
 ## Usage
 
