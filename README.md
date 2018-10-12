@@ -23,6 +23,10 @@ end
     = f.input localized_attribute(:title, locale), label: 'Название'
 ```
 
+Получаем:
+
+![Image of example](https://raw.githubusercontent.com/BrandyMint/localized_render/master/doc/example.gif)
+
 
 ## Installation
 Add this line to your application's Gemfile:
