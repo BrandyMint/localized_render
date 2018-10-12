@@ -1,8 +1,28 @@
 # LocalizedRender
-Short description and motivation.
+
+Позволяет удобно редаткировать globalized-атрибуты моделей во вьюхах с
+поддержкой bootstrap 3 css
 
 ## Usage
-How to use my plugin.
+
+Имеем модель с атрибутом title подключенным через globalize
+
+```
+class Content < ApplicationRecord
+  translates :title
+end
+```
+
+В представлении формы делаем переключатель через таб-ы между доступными
+локалями:
+
+
+```slim
+= simple_form_for content do |f|
+  = localized_render do |locale|
+    = f.input localized_attribute(:title, locale), label: 'Название'
+```
+
 
 ## Installation
 Add this line to your application's Gemfile:
