@@ -13,8 +13,7 @@ class Content < ApplicationRecord
 end
 ```
 
-В представлении формы делаем переключатель через таб-ы между доступными
-локалями:
+В представлении формы добавляем переключатель между доступными локалями:
 
 
 ```slim
@@ -27,6 +26,13 @@ end
 
 ![Image of example](https://raw.githubusercontent.com/BrandyMint/localized_render/master/doc/example.gif)
 
+
+## Methods
+
+Модуль представляет всего два публичных метода:
+
+* localized_render
+* localied_attribute_title
 
 ## Installation
 Add this line to your application's Gemfile:
