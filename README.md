@@ -10,10 +10,19 @@
 
 Имеем модель с атрибутом title подключенным через globalize
 
-```
+```ruby
 class Content < ApplicationRecord
   translates :title
 end
+```
+
+Добавляем в контроллер:
+
+```ruby
+class ApplicationController < ActionController::Base
+  helper LocalizedRender.helpers
+end
+
 ```
 
 В представлении формы добавляем переключатель между доступными локалями:
@@ -22,7 +31,7 @@ end
 ```slim
 = simple_form_for content do |f|
   = localized_render do |locale|
-    = f.input localized_attribute(:title, locale), label: 'Название'
+    = f.input localized_attribute(:title, locale)
 ```
 
 Получаем:
@@ -30,12 +39,14 @@ end
 ![Image of example](https://raw.githubusercontent.com/BrandyMint/localized_render/master/doc/example.gif)
 
 
-## Methods
+## Доступные методы
 
 Модуль представляет всего два публичных метода:
 
-* localized_render
-* localied_attribute_title
+* localized_render - рендерит несколько input-ов для разных локалей в виде
+  bootstrap css nav-tabs
+* localied_attribute_title - отдает название атрибута с постфиксом в виде локали
+  (_ru, /_en). Используйте для этого gem globalize-accessors
 
 ## Installation
 Add this line to your application's Gemfile:
@@ -53,6 +64,8 @@ Or install it yourself as:
 ```bash
 $ gem install localized_render
 ```
+
+Рекомендую использовать gem globalize-accessors
 
 ## Contributing
 Contribution directions go here.
